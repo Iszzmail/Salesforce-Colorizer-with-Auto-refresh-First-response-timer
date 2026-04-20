@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Salesforce Highlighter & Refresher",
+  "version": "6.0",
+  "description": "All-in-one tool: SLA Timers (45m), Auto-Refresh, Row Coloring, Case Notes, and Response Notifications.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "alarms",
+    "notifications"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.lightning.force.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["styles.css"],
+      "matches": ["https://*.lightning.force.com/*"]
+    }
+  ]
+}

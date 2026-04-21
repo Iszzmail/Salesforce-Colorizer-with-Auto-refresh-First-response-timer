@@ -4,10 +4,6 @@
 
 ---
 
-## 📸 Screenshots
-
-> *(Add your screenshots here)*
-
 ---
 
 ## ✨ What It Does
@@ -20,11 +16,17 @@ Displays a live elapsed-time badge directly in the **First Response** column for
 - Timer **automatically disappears** once a First Response is sent
 - Displays time in a clean, readable format:
 
+<img width="1024" height="195" alt="image" src="https://github.com/user-attachments/assets/ea432154-e29a-4511-859e-82ad6a98cf33" />
+
+
 | Elapsed Time | Display |
 |---|---|
 | Under 1 hour | `43 min` |
 | Under 1 day | `3 hr 12 min` |
 | 1 day or more | `2 days 4 hr` |
+
+<img width="354" height="229" alt="image" src="https://github.com/user-attachments/assets/31e14725-d5c9-4b7d-8b52-4032f96a226a" />
+
 
 ---
 
@@ -54,20 +56,21 @@ Automatically highlights case rows based on smart rules:
 
 All colors are fully customizable via the popup. ✅
 
+<img width="1725" height="906" alt="image" src="https://github.com/user-attachments/assets/8471226a-f8e1-46ed-bd1a-a719cebdc382" />
+
 ---
 
 ### 🔄 4. Tab Auto-Refresh
 Automatically refreshes your Salesforce list view at a set interval (default: every 5 minutes) — keeping your team on the freshest data without lifting a finger. 💤➡️📋
+
+<img width="374" height="608" alt="image" src="https://github.com/user-attachments/assets/5910c7a1-3430-42a6-abb7-e6ddc691babc" />
 
 ---
 
 ### 📝 5. Case Notes
 Add private internal notes to any case right from the list view. A ✏️ pencil icon appears in the Subject column — click it to open the note editor. Notes are saved to your browser and persist across sessions.
 
----
-
-### 🔔 6. Badge & Notifications
-The extension icon shows a 🔴 badge count of cases with status **Responded** or **Re-Opened** that need attention. Desktop notifications fire automatically so nothing slips through the cracks.
+<img width="1728" height="661" alt="image" src="https://github.com/user-attachments/assets/e2620937-1aa8-429f-8464-48b39721649a" />
 
 ---
 

@@ -70,7 +70,8 @@ Automatically refreshes your Salesforce list view at a set interval (default: ev
 ### 📝 5. Case Notes
 Add private internal notes to any case right from the list view. A ✏️ pencil icon appears in the Subject column — click it to open the note editor. Notes are saved to your browser and persist across sessions.
 
-<img width="1728" height="661" alt="image" src="https://github.com/user-attachments/assets/e2620937-1aa8-429f-8464-48b39721649a" />
+![Uploading image.png…]()
+
 
 ---
 

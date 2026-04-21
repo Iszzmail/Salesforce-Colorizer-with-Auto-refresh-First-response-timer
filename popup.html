@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Salesforce Highlighter</title>
+  <title>SF Highlighter</title>
   <link rel="stylesheet" href="popup.css">
 </head>
 <body class="dark-mode">
 
+  <!-- ── Header ── -->
   <div class="header">
     <div class="header-title">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.0423 4.416C16.1433 3.517 14.8623 3 13.5023 3C10.7423 3 8.50232 5.24 8.50232 8C8.50232 9.36 9.01932 10.64 9.91832 11.54L4.10232 17.35C3.71232 17.74 3.71232 18.37 4.10232 18.76L5.24232 19.9C5.63232 20.29 6.26232 20.29 6.65232 19.9L12.4623 14.08C13.3623 14.98 14.6423 15.5 16.0023 15.5C18.7623 15.5 21.0023 13.26 21.0023 10.5C21.0023 9.14 20.4823 7.86 19.5823 6.96L17.0423 4.416ZM15.2923 6.126L16.8723 7.706C17.3423 7.236 17.5023 6.556 17.5023 5.916C17.5023 5.276 17.3423 4.596 16.8723 4.126L15.2923 5.516C15.2923 5.706 15.2923 5.926 15.2923 6.126Z" fill="#61afef"/><path d="M12.46 14.08L6.65 19.9C6.26 20.29 5.63 20.29 5.24 19.9L4.1 18.76C3.71 18.37 3.71 17.74 4.1 17.35L9.92 11.54C9.53181 11.2333 9.19183 10.8712 8.91 10.47L3 16.28V21H7.72L13.53 15.19C13.13 14.91 12.77 14.57 12.46 14.08Z" fill="#528baf"/></svg>
-      <h2>Highlighter</h2>
+      <div class="header-logo">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" fill="white" opacity="0.9"/>
+        </svg>
+      </div>
+      <div>
+        <h2>SF Highlighter</h2>
+        <p>Case List View Enhancer</p>
+      </div>
     </div>
     <div class="theme-switcher">
       <svg class="icon" id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.707 7.072l.707-.707a1 1 0 10-1.414-1.414l-.707.707a1 1 0 101.414 1.414zM3 11a1 1 0 100-2H2a1 1 0 100 2h1z" clip-rule="evenodd" /></svg>
@@ -18,74 +26,80 @@
     </div>
   </div>
 
-  <div class="card">
-    <div class="rule">
-      <span class="main-toggle-label">Enable Highlighter</span>
-      <label class="switch"><input type="checkbox" id="master-enable-toggle"><span class="slider"></span></label>
-    </div>
-  </div>
-
-  <div class="card" id="auto-refresh-card">
-    <h3>Tab Auto Refresh</h3>
-    <div class="rule">
-      <span>Enable Tab Refresh</span>
-      <label class="switch"><input type="checkbox" id="refresh-enable-toggle"><span class="slider"></span></label>
-    </div>
-    <div id="refresh-controls-container" class="disabled">
-      <div class="rule">
-        <span>Interval (minutes)</span>
-        <div class="interval-controls">
-          <button class="interval-btn" id="decrease-interval">-</button>
-          <span id="refresh-interval-display">5</span>
-          <button class="interval-btn" id="increase-interval">+</button>
-        </div>
-      </div>
-      <div class="last-refresh-info">
-        Last Refresh: <span id="last-refresh-time">Never</span>
-      </div>
-    </div>
+  <!-- ── Master Enable ── -->
+  <div class="master-banner">
+    <span>Enable Highlighter</span>
+    <label class="switch"><input type="checkbox" id="master-enable-toggle"><span class="slider"></span></label>
   </div>
 
   <div id="rules-container">
+
+    <!-- ── Auto Refresh ── -->
+    <div class="section-label">🔄 Auto Refresh</div>
+    <div class="card" id="auto-refresh-card">
+      <div class="rule">
+        <span>Enable Tab Refresh</span>
+        <label class="switch"><input type="checkbox" id="refresh-enable-toggle"><span class="slider"></span></label>
+      </div>
+      <div id="refresh-controls-container" class="disabled">
+        <div class="rule">
+          <span>Interval (minutes)</span>
+          <div class="interval-controls">
+            <button class="interval-btn" id="decrease-interval">−</button>
+            <span id="refresh-interval-display">5</span>
+            <button class="interval-btn" id="increase-interval">+</button>
+          </div>
+        </div>
+        <div class="last-refresh-info">Last Refresh: <span id="last-refresh-time">Never</span></div>
+      </div>
+    </div>
+
+    <!-- ── Coloring Rules ── -->
+    <div class="section-label">🎨 Coloring Rules</div>
     <div class="card">
-      <h3>Coloring Rules</h3>
       <div class="rule"><span>Action Needed</span><input type="color" id="color-action-needed" value="#ff4d4d"><label class="switch"><input type="checkbox" id="enable-action-needed"><span class="slider"></span></label></div>
       <div class="rule"><span>Platinum Support</span><input type="color" id="color-platinum-support" value="#D4AF37"><label class="switch"><input type="checkbox" id="enable-platinum-support"><span class="slider"></span></label></div>
       <div class="rule"><span>Empty First Response</span><input type="color" id="color-empty-first-response" value="#FFC0CB"><label class="switch"><input type="checkbox" id="enable-empty-first-response"><span class="slider"></span></label></div>
       <div class="rule"><span>"Closed" JIRA Status</span><input type="color" id="color-jira-status" value="#ADD8E6"><label class="switch"><input type="checkbox" id="enable-jira-status"><span class="slider"></span></label></div>
-      <div class="rule"><span>Last Modified > 24 hrs</span><input type="color" id="color-old-last-modified" value="#FFFFE0"><label class="switch"><input type="checkbox" id="enable-old-last-modified"><span class="slider"></span></label></div>
+      <div class="rule"><span>Last Modified &gt; 24 hrs</span><input type="color" id="color-old-last-modified" value="#FFFFE0"><label class="switch"><input type="checkbox" id="enable-old-last-modified"><span class="slider"></span></label></div>
     </div>
+
+    <!-- ── Custom Account Rules ── -->
+    <div class="section-label">🏢 Account Rules</div>
     <div class="card">
-      <h3>Custom Account Rules</h3>
       <div class="custom-account-rule-creator">
         <input type="color" id="account-color-input" value="#90EE90">
         <div class="account-input-group">
           <input type="text" id="account-name-input" placeholder="Account Name">
-          <button class="main-button" id="add-account-rule">Add / Update Rule</button>
+          <button class="add-account-btn main-button" id="add-account-rule">+ Add / Update Rule</button>
         </div>
       </div>
       <div id="account-rules-list"></div>
     </div>
-  </div>
 
-  <div class="card">
-    <h3>Timer Highlight Rules</h3>
-    <div id="timer-rules-list"></div>
-    <div class="add-timer-rule-row">
-      <span>After</span>
-      <input type="number" id="timer-mins-input" min="1" placeholder="15" value="15" />
-      <span>mins</span>
-      <input type="color" id="timer-color-input" value="#ffff00" />
-      <button class="add-timer-btn" id="add-timer-rule">+ Add</button>
+    <!-- ── Timer Rules ── -->
+    <div class="section-label">⏱️ Timer Highlight Rules</div>
+    <div class="card">
+      <div id="timer-rules-list"></div>
+      <div class="add-timer-rule-row">
+        <span>After</span>
+        <input type="number" id="timer-mins-input" min="1" placeholder="15" value="15" />
+        <span>mins</span>
+        <input type="color" id="timer-color-input" value="#ffff00" />
+        <button class="add-timer-btn" id="add-timer-rule">+ Add</button>
+      </div>
     </div>
+
+    <!-- ── Notes ── -->
+    <div class="section-label">📝 Notes</div>
+    <div class="card">
+      <button class="main-button danger-button" id="clear-all-notes">🗑️ Clear All Case Notes</button>
+    </div>
+
   </div>
 
-  <div class="card">
-    <h3>Notes</h3>
-    <button class="main-button danger-button" id="clear-all-notes">Clear All Case Notes</button>
-  </div>
-
-  <button class="main-button" id="apply-rules-button">Apply All Rules on Page</button>
+  <button class="main-button" id="apply-rules-button" style="margin-top:10px">▶ Apply All Rules on Page</button>
+  <div class="footer-gap"></div>
 
   <script src="popup.js"></script>
 </body>
